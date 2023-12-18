@@ -1,14 +1,3 @@
-// const assertEqual = function(actual, expected) {
-//   let actualInput   = Array.isArray(actual) ? actual.toString() : actual;
-//   let expectedInput = Array.isArray(expected) ? expected.toString() : expected;
-
-//   if (actualInput === expectedInput) {
-//     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-//   } else {
-//     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-//   }
-// };
-
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -34,6 +23,9 @@ assertEqual(result.length, 2); // ensure we get back two elements
 assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
 assertEqual(result[1], "Labs"); // ensure second element is "Labs"
 // assertEqual(result, ["Lighthouse", "Labs"]);
+
+assertEqual(tail(["test"]).length, 0); // tail of array with one element only should be empty
+assertEqual(tail([]).length, 0); // tail of an empty array should also be empty
 
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
