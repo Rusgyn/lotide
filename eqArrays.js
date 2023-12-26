@@ -11,7 +11,7 @@ const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
-  
+
   for (const [idx, el] of array1.entries()) {
     if (el !== array2[idx]) {
       return false;
@@ -19,9 +19,6 @@ const eqArrays = function(array1, array2) {
   }
   return true;
 };
-
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
 
 assertEqual(eqArrays([], []), true);
 assertEqual(eqArrays(["1", "2", "3"], []), false);
