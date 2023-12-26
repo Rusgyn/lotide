@@ -8,11 +8,15 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(array1, array2) {
   
-  let arrEmpty = (array1.length === 0 || array2.length === 0);
+  let arrEmpty = (array1.length === 0 && array2.length === 0);
   let arrLength = (array1.length !== array2.length);
 
-  if (arrEmpty || arrLength) {
+  if (arrLength) {
     return false;
+  }
+
+  if (arrEmpty) {
+    return true;
   }
 
   for (const [idx, el] of array1.entries()) {
@@ -27,6 +31,7 @@ assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3, 5]), false);
+assertEqual(eqArrays([], []), true);
 assertEqual(eqArrays(["1", "2", "3"], []), false);
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
