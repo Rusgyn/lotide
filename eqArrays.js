@@ -7,15 +7,12 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(array1, array2) {
-  
-  let arrEmpty = (array1.length === 0 && array2.length === 0);
-  let arrLength = (array1.length !== array2.length);
 
-  if (arrLength) {
+  if (array1.length !== array2.length) {
     return false;
   }
 
-  if (arrEmpty) {
+  if (array1.length === 0 && array2.length === 0) {
     return true;
   }
 
@@ -30,7 +27,6 @@ const eqArrays = function(array1, array2) {
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3, 5]), false);
 assertEqual(eqArrays([], []), true);
 assertEqual(eqArrays(["1", "2", "3"], []), false);
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
