@@ -1,3 +1,6 @@
+/* Implement a function which will take in two arrays and console.log an appropriate message to the console. */
+
+// This function checks if two arrays have the same elements in the same order.
 const eqArrays = function(array1, array2) {
 
   if (array1.length !== array2.length) {
@@ -12,6 +15,7 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
+// This function uses eqArrays to check if two arrays are equal and prints a message to the console.
 const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
