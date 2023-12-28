@@ -26,12 +26,9 @@ const assertArraysEqual = function(arr1, arr2) {
 
 // This function will return a new array with only those elements from source that are not present in the itemsToRemove array.
 const without = function(source, itemsToRemove) {
+
   let itemsRemain = [];
-
-  if (source.length === 0 || itemsToRemove.length === 0) {
-    return itemsRemain;
-  }
-
+  
   for (let j = 0; j < source.length; j++) {
     if (!itemsToRemove.includes(source[j])) {
       itemsRemain.push(source[j]);
