@@ -28,12 +28,24 @@ const assertArraysEqual = function(arr1, arr2) {
 // This function will take in an array containing elements including nested arrays of elements, and return a "flattened" version of the array.
 const flatten = function(arrayToFlat) {
 
-  let flattenedArray = [].concat.apply([], arrayToFlat);
-  
+  let flattenedArray = [].concat(...arrayToFlat); //the Spread syntax (...) allows the concatenation operation to be performed on all the elements of the array and stores the result in an empty array thus giving us a flattened array.
+
   return flattenedArray;
 };
 
+const firstFlat = [1, 2, [3, 4], 5, [6]];
+const secondFlat = [1, [2, [3, 4]]];
+const thirdFlat = [];
+const fourthFlat = [[1, 2], [3, 4], [5, 6],[7, 8, 9], [10, 11, 12]];
+
+//to test the flatten().
+flatten(firstFlat); //OUTPUT: [1, 2, 3, 4, 5, 6]
+flatten(secondFlat); //OUTPUT: [1, 2, [3, 4]]
+flatten(thirdFlat); //OUTPUT: []
+flatten(fourthFlat); //OUTPUT: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
 //to test using assertArraysEqual() if the return flattened elements has passed or failed.
-console.log(assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]));
-console.log(assertArraysEqual(flatten([]), []));
-console.log(assertArraysEqual(flatten([[1, 2], [3, 4], [5, 6],[7, 8, 9], [10, 11, 12, 13, 14, 15]]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]));
+assertArraysEqual(flatten(firstFlat), [1, 2, 3, 4, 5, 6]);
+assertArraysEqual(flatten(secondFlat), [1, 2, [3, 4]]);
+assertArraysEqual(flatten(thirdFlat), []);
+assertArraysEqual(flatten(fourthFlat), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
