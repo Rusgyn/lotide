@@ -29,16 +29,17 @@ const assertArraysEqual = function(arr1, arr2) {
 
 const letterPositions = function(sentence) {
   const results = {};
-  // logic to update results here
-  sentence.split('').forEach((char, index) => {
+  for (let index = 0; index < sentence.length; index++) {
+    const char = sentence[index];
     if (char !== " ") {
-      if (results[char]) { //To check if the char or key exist in our object called results.
+      if (results[char]) { //To check if the char or key already in our object called results.
         results[char].push(index);
       } else {
         results[char] = [index];
       }
     }
-  });
+  }
+
   return results;
 };
 
@@ -52,17 +53,17 @@ console.log(test2); /* => { h: [ 0 ], i: [ 1 ], ',': [ 2 ], L: [ 4, 6 ], H: [ 5 
 console.log(test3); /* => { '0': [ 5 ], '2': [ 4, 6 ], '4': [ 7 ], L: [ 0, 2 ], H: [ 1 ] } */
 
 //to test using assertArraysEqual() if the return results has passed or failed.
-assertArraysEqual(test1.h, [0]);
-assertArraysEqual(test1.e, [1]);
-assertArraysEqual(test1.l, [2, 3]);
-assertArraysEqual(test1.o, [4]);
-assertArraysEqual(test2.h, [0]);
-assertArraysEqual(test2.i, [1]);
+assertArraysEqual(test1['h'], [0]);
+assertArraysEqual(test1['e'], [1]);
+assertArraysEqual(test1['l'], [2, 3]);
+assertArraysEqual(test1['o'], [4]);
+assertArraysEqual(test2['h'], [0]);
+assertArraysEqual(test2['i'], [1]);
 assertArraysEqual(test2[','], [2]);
-assertArraysEqual(test2.L, [4, 6]);
-assertArraysEqual(test2.H, [5]);
-assertArraysEqual(test3.L, [0, 2]);
-assertArraysEqual(test3.H, [1]);
+assertArraysEqual(test2['L'], [4, 6]);
+assertArraysEqual(test2['H'], [5]);
+assertArraysEqual(test3['L'], [0, 2]);
+assertArraysEqual(test3['H'], [1]);
 assertArraysEqual(test3['0'], [5]);
 assertArraysEqual(test3['2'], [4, 6]);
 assertArraysEqual(test3['4'], [7]);
@@ -71,16 +72,17 @@ assertArraysEqual(test3['4'], [7]);
 //OTHER SOLUTION #1:
 // const letterPositions = function(sentence) {
 //   const results = {};
-// for (let index = 0; index < sentence.length; index++) {
-//   const char = sentence[index];
+// sentence.split('').forEach((char, index) => {
 //   if (char !== " ") {
-//     if (results[char]) { //To check if the char or key already in our object called results.
+//     if (results[char]) { //To check if the char or key exist in our object called results.
 //       results[char].push(index);
 //     } else {
 //       results[char] = [index];
 //     }
 //   }
-// }
+// });
+//   return results;
+// };
 
 //OTHER SOLUTION #2:
 // const letterPositions = function(sentence) {
