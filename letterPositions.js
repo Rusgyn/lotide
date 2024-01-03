@@ -32,7 +32,7 @@ const letterPositions = function(sentence) {
   for (let index = 0; index < sentence.length; index++) {
     let char = sentence[index];
     if (char !== " ") {
-      if (Object.prototype.hasOwnProperty.call(results, char)) {
+      if (results[char]) {
         results[char].push(index);
       } else {
         results[char] = [index];
@@ -44,14 +44,14 @@ const letterPositions = function(sentence) {
 };
 
 //Test cases will check the indexes of all characters.
-const test1 = ('hello');
-const test2 = ('hi, LHL');
-const test3 = ('LHL 2024');
+const test1 = letterPositions('hello');
+const test2 = letterPositions('hi, LHL');
+const test3 = letterPositions('LHL 2024');
 
-console.log(letterPositions(test1)); /* => { h: [ 0 ], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ] } */
-console.log(letterPositions(test2)); /* => { h: [ 0 ], i: [ 1 ], ',': [ 2 ], L: [ 4, 6 ], H: [ 5 ] } */
-console.log(letterPositions(test3)); /* => { '0': [ 5 ], '2': [ 4, 6 ], '4': [ 7 ], L: [ 0, 2 ], H: [ 1 ] } */
+console.log(test1); /* => { h: [ 0 ], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ] } */
+console.log(test2); /* => { h: [ 0 ], i: [ 1 ], ',': [ 2 ], L: [ 4, 6 ], H: [ 5 ] } */
+console.log(test3); /* => { '0': [ 5 ], '2': [ 4, 6 ], '4': [ 7 ], L: [ 0, 2 ], H: [ 1 ] } */
 
-assertArraysEqual(letterPositions(test1).l, [2, 3]);
-assertArraysEqual(letterPositions(test2).L, [4, 6]);
-assertArraysEqual(letterPositions(test3).H, [1]);
+assertArraysEqual(test1.l, [2, 3]);
+assertArraysEqual(test2.L, [4, 6]);
+assertArraysEqual(test3.H, [1]);
