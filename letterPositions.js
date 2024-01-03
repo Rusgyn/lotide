@@ -30,17 +30,15 @@ const assertArraysEqual = function(arr1, arr2) {
 const letterPositions = function(sentence) {
   const results = {};
   // logic to update results here
-  for (let index = 0; index < sentence.length; index++) {
-    const char = sentence[index];
+  sentence.split('').forEach((char, index) => {
     if (char !== " ") {
-      if (results[char]) {
+      if (results[char]) { //To check if the char or key exist in our object called results.
         results[char].push(index);
       } else {
         results[char] = [index];
       }
     }
-  }
-
+  });
   return results;
 };
 
@@ -53,14 +51,40 @@ console.log(test1); /* => { h: [ 0 ], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ] } */
 console.log(test2); /* => { h: [ 0 ], i: [ 1 ], ',': [ 2 ], L: [ 4, 6 ], H: [ 5 ] } */
 console.log(test3); /* => { '0': [ 5 ], '2': [ 4, 6 ], '4': [ 7 ], L: [ 0, 2 ], H: [ 1 ] } */
 
+//to test using assertArraysEqual() if the return results has passed or failed.
+assertArraysEqual(test1.h, [0]);
+assertArraysEqual(test1.e, [1]);
 assertArraysEqual(test1.l, [2, 3]);
+assertArraysEqual(test1.o, [4]);
+assertArraysEqual(test2.h, [0]);
+assertArraysEqual(test2.i, [1]);
+assertArraysEqual(test2[','], [2]);
 assertArraysEqual(test2.L, [4, 6]);
+assertArraysEqual(test2.H, [5]);
+assertArraysEqual(test3.L, [0, 2]);
 assertArraysEqual(test3.H, [1]);
+assertArraysEqual(test3['0'], [5]);
+assertArraysEqual(test3['2'], [4, 6]);
+assertArraysEqual(test3['4'], [7]);
 
 
-//OTHER SOLUTION:
+//OTHER SOLUTION #1:
+// const letterPositions = function(sentence) {
+//   const results = {};
+// for (let index = 0; index < sentence.length; index++) {
+//   const char = sentence[index];
+//   if (char !== " ") {
+//     if (results[char]) { //To check if the char or key already in our object called results.
+//       results[char].push(index);
+//     } else {
+//       results[char] = [index];
+//     }
+//   }
+// }
 
-
+//OTHER SOLUTION #2:
+// const letterPositions = function(sentence) {
+//   const results = {};
 //   for (let [index, char] of Object.entries(sentence)) {
 //     if (char !== ' ') {
 //       if (Object.prototype.hasOwnProperty.call(results, char)) { //To check if the char or key already in our object called results.
@@ -72,16 +96,3 @@ assertArraysEqual(test3.H, [1]);
 //   }
 //   return results;
 // };
-
-// //Test case will check the indexes of all letters.
-// console.log(letterPositions('hello world')); /* => {
-//   h: [ 0 ],
-//   e: [ 1 ],
-//   l: [ 2, 3, 9 ],
-//   o: [ 4, 7 ],
-//   w: [ 6 ],
-//   r: [ 8 ],
-//   d: [ 10 ]
-// }
-// */
-// assertArraysEqual(letterPositions('hello world').e, [1]);
