@@ -25,12 +25,13 @@ const assertArraysEqual = function(arr1, arr2) {
   }
 };
 
-//This letterPositions function take in a sentence (as a string) and then return the indexes of each of the letters in that sentence.
+/* This letterPositions function will return all the indices (zero-based positions) in the string where each character is found.*/
+
 const letterPositions = function(sentence) {
   const results = {};
   // logic to update results here
   for (let index = 0; index < sentence.length; index++) {
-    let char = sentence[index];
+    const char = sentence[index];
     if (char !== " ") {
       if (results[char]) {
         results[char].push(index);
@@ -55,3 +56,32 @@ console.log(test3); /* => { '0': [ 5 ], '2': [ 4, 6 ], '4': [ 7 ], L: [ 0, 2 ], 
 assertArraysEqual(test1.l, [2, 3]);
 assertArraysEqual(test2.L, [4, 6]);
 assertArraysEqual(test3.H, [1]);
+
+
+//OTHER SOLUTION:
+
+
+//   for (let [index, char] of Object.entries(sentence)) {
+//     if (char !== ' ') {
+//       if (Object.prototype.hasOwnProperty.call(results, char)) { //To check if the char or key already in our object called results.
+//         results[char] = [results[char], Number(index)].flat(); //flat method concatenated arrays to a new array.
+//       } else {
+//         results[char] = [Number(index)];
+//       }
+//     }
+//   }
+//   return results;
+// };
+
+// //Test case will check the indexes of all letters.
+// console.log(letterPositions('hello world')); /* => {
+//   h: [ 0 ],
+//   e: [ 1 ],
+//   l: [ 2, 3, 9 ],
+//   o: [ 4, 7 ],
+//   w: [ 6 ],
+//   r: [ 8 ],
+//   d: [ 10 ]
+// }
+// */
+// assertArraysEqual(letterPositions('hello world').e, [1]);
