@@ -11,12 +11,11 @@ const assertEqual = function(actual, expected) {
 //findKeyByValue()which takes in an object and a value.
 const findKeyByValue = function(obj, value) {
   //using Object.Keys to return all the keys of the object.
-  //using .filter method to check is any of the keys match the value provided.
-  const foundKeyByVal = Object.keys(obj).filter(key => obj[key] === value);
-
-  //for..of method is used to loop over keys returned by the Object.Keys which is in array.
-  for (const foundKey of foundKeyByVal) {
-    return foundKey;
+  //for..of method is used to loop over keys returned by the Object.Keys.
+  for (const foundKey of Object.keys(obj)) {
+    if (obj[foundKey] === value) {
+      return foundKey;
+    }
   }
 };
 
@@ -33,15 +32,6 @@ const babyFoods = {
   snack: "Goldfish Cheddar cracker"
 };
 
-findKeyByValue(bestTVShowsByGenre, "The Expanse"); // => sci_fi
-findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"); // => comedy
-findKeyByValue(bestTVShowsByGenre, "The Wire"); // => drama
-findKeyByValue(bestTVShowsByGenre, "That '70s Show"); // => undefined
-findKeyByValue(babyFoods, "Kendamil formula"); // => milk
-findKeyByValue(babyFoods, "Apple"); // => fruit
-findKeyByValue(babyFoods, "Goldfish Cheddar cracker"); // => snack
-findKeyByValue(babyFoods, "cars"); // => undefined
-
 //to test using assertEqual() if the return results has passed or failed.
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");
@@ -52,17 +42,28 @@ assertEqual(findKeyByValue(babyFoods, "Apple"), "fruit");
 assertEqual(findKeyByValue(babyFoods, "Goldfish Cheddar cracker"), "snack");
 assertEqual(findKeyByValue(babyFoods, "cars"), undefined);
 
-//OTHER SOLUTION:
-// Using for..in method
+//ALTERNATIVE SOLUTION #1: Using for..in method
 /*
 const findKeyByValue = function(obj, value) {
   for (let objProperty in obj) {
     if (obj.hasOwnProperty(objProperty)) {
-        if (obj[objProperty] === value)
-            return objProperty;
-    } else {
-      return undefined;
+      if (obj[objProperty] === value);
+        return objProperty;
     }
   }
 }
+*/
+
+//ALTERNATIVE SOLUTION #2: Using Object.keys and .filter method
+/*
+const findKeyByValue = function(obj, value) {
+  //using Object.Keys to return all the keys of the object.
+  //using .filter method to check is any of the keys match the value provided.
+  const foundKeyByVal = Object.keys(obj).filter(key => obj[key] === value);
+
+  //for..of method is used to loop over keys returned by the Object.Keys which is in array.
+  for (const foundKey of foundKeyByVal) {
+    return foundKey;
+  }
+};
 */
