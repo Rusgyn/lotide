@@ -25,7 +25,7 @@ const countOnly = function(allItems, itemsToCount) {
     }
   }
 
-  return ("The results: ", results);
+  return results;
 };
 
 const firstNames = [
@@ -48,22 +48,3 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
-
-
-/*ALTERNATIVE SOLUTION:
-
-// allItems: an array of strings that we need to look through
-// itemsToCount: an object specifying what to count
-const countOnly = function(allItems, itemsToCount) {
-  const results = {};
-
-  for (let item of allItems) {
-    if (itemsToCount[item]) {
-      counted[item] ||= 0; //initialize to zero if undefined
-      counted[item]++;
-    }
-  }
-
-  return results;
-};
-*/
