@@ -34,43 +34,28 @@ const eqObjects = function(object1, object2) {
   const keyObj1 = Object.keys(object1);
   const keyObj2 = Object.keys(object2);
   
-  //To check if given objects have the same number of keys.
-  //  if returns true, looping steps will be processed
+  //To check if given objects have the same length of keys.
   if (keyObj1.length !== keyObj2.length) {
     return false;
   }
 
-  //Loop through the return keys of Object.keys method since the keys are in array
-  for (let propObj1 of keyObj1) {
-    //checking the values for each key is the same as the value for that same key in the other object
-    if (object1[propObj1] === object2[propObj1]) {
-      return true;
-    }
+  //Loop the given object to determine the key and value.
+  for (let [key, value] of Object.entries(object1)) {
+    //checking the value for each key if it is an array
+    //  and if the same as the value for that same key in the other object
+    let object2Value = object2[key];
 
-    //checking if the values is an array.
-    // if Array eqArrays() will be called.
-    let object1HasArray = false;
-    let object2HasArray = false;
-
-    if (Array.isArray(object1[propObj1])) {
-      object1HasArray = true;
-    }
-    if (Array.isArray(object2[propObj1])) {
-      object2HasArray = true;
-    }
-    if (object1HasArray && object2HasArray) {
-      eqArrays(object1[propObj1], object2[propObj1]);
+    if (Array.isArray(value) && Array.isArray(object2Value)) {
+      return eqArrays(value, object2Value);
     } else {
-      return false;
+      return (value === object2Value);
     }
   }
-  
-  return true;
 };
 
 //Test cases
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
+const shirtObject = { colors: "red", size: "medium" };
+const anotherShirtObject = { size: "medium", colors: "red" };
 eqObjects(shirtObject , anotherShirtObject); // => true
 assertEqual(eqObjects(shirtObject , anotherShirtObject), true);
 
