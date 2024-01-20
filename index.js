@@ -18,21 +18,6 @@ const middle = require('./middle');
 
 module.exports = {
 
-  assertEqual: assertEqual,
-  assertArraysEqual: assertArraysEqual,
-  assertObjectsEqual: assertObjectsEqual,
-  countLetters: countLetters,
-  countOnly: countOnly,
-  eqArrays: eqArrays,
-  eqObjects: eqObjects,
-  findKey: findKey,
-  findKeyByValue: findKeyByValue,
-  flatten: flatten,
-  letterPositions: letterPositions,
-  takeUntil: takeUntil,
-  without: without,
-  head:   head,
-  tail:   tail,
-  middle: middle,
+  head, tail, middle, assertEqual, assertArraysEqual, assertObjectsEqual, countLetters, countOnly, eqArrays, eqObjects, findKey, findKeyByValue, flatten, letterPositions, takeUntil, without
 
 };
