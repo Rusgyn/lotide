@@ -1,7 +1,7 @@
 // Test case for middle function.
 
-const eqArrays = require('../eqArrays');
-const assertArraysEqual = require('../assertArraysEqual');
+const eqArrays = require('../eqArrays'); // The function eqArrays checks if two arrays have the same elements in the same order.
+const assertArraysEqual = require('../assertArraysEqual'); // uses eqArrays to check if two arrays are equal and prints a message to the console.
 const middle = require('../middle');
 
 //Test cases
