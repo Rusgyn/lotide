@@ -11,14 +11,9 @@ const middle = function(whatIsMidArray) {
 
   if (numOfArr % 2 === 0) {
     let even = (numOfArr / 2) - 1;
-    
-    middleOfTheArray.push(whatIsMidArray[even]);
-    middleOfTheArray.push(whatIsMidArray[even + 1]);
-  }
-
-  if (numOfArr % 2 !== 0) {
+    middleOfTheArray.push(whatIsMidArray[even], whatIsMidArray[even + 1]);
+  } else {
     let odd = (numOfArr / 2) - 0.5;
-
     middleOfTheArray.push(whatIsMidArray[odd]);
   }
 
