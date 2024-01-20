@@ -5,7 +5,7 @@ const middle = function(whatIsMidArray) {
   let middleOfTheArray = [];
   let numOfArr = whatIsMidArray.length;
 
-  if (whatIsMidArray.length <= 2) {
+  if (numOfArr <= 2) {
     return middleOfTheArray;
   }
 
