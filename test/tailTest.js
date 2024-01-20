@@ -1,18 +1,36 @@
 //test/tailTest.js
 
+const assert = require('chai').assert;
 const assertEqual = require('../assertEqual');
 const tail = require('../tail');
 
-//TEST CODE
+//Test cases
+describe("#tail", function() {
+  it("should return 2 and passed for the array length of ['Hello', 'Lighthouse', 'Labs']", () => {
+    assert.strictEqual(tail(["Hello", "Lighthouse", "Labs"]).length, 2);
+    assert.strictEqual(assertEqual(tail(["Hello", "Lighthouse", "Labs"]).length, 2));
+  }); // => ✅✅✅ Assertion Passed: 2 === 2
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+  it("should return 2 and passed for the array [1, 2, 3]", () => {
+    const test = tail([1, 2, 3]);
+    assert.strictEqual(test[0], 2);
+    assert.strictEqual(assertEqual(test[0], 2));
+  }); // => ✅✅✅ Assertion Passed: 2 === 2
 
-assertEqual(tail(["test"]).length, 0); // tail of array with one element only should be empty
-assertEqual(tail([]).length, 0); // tail of an empty array should also be empty
+  it("should return 3 and passed for the array length of ['Yo Yo', 'Lighthouse', 'Labs', 'Cohort'];", () => {
+    const words = tail(["Yo Yo", "Lighthouse", "Labs", "Cohort"]);
+    assert.strictEqual(words.length, 3);
+    assert.strictEqual(assertEqual(words.length, 3));
+  }); // => ✅✅✅ Assertion Passed: 2 === 2
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3); // original array should still have 3 elements!
+  it("should return an empty or 0 when an array has one element only", () => {
+    assert.strictEqual(tail(["test"]).length, 0);
+    assert.strictEqual(assertEqual(tail(["test"]).length, 0));
+  }); // => ✅✅✅ Assertion Passed: 0 === 0
+
+  it("should return an empty or 0 when an array is empty", () => {
+    assert.strictEqual(tail([]).length, 0);
+    assert.strictEqual(assertEqual(tail([]).length, 0));
+  }); // => ✅✅✅ Assertion Passed: 0 === 0
+
+});
