@@ -1,12 +1,15 @@
 /* Implement the function findKeyByValue which takes in an object and a value. It should scan the object and return the first key which contains the given value. If no key with that given value is found, then it should return undefined.  */
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+
+const assertEqual = require("./assertEqual");
+
+// const assertEqual = function(actual, expected) {
+//   if (actual === expected) {
+//     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+//   } else {
+//     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+//   }
+// };
 
 //findKeyByValue()which takes in an object and a value.
 const findKeyByValue = function(obj, value) {
@@ -19,35 +22,42 @@ const findKeyByValue = function(obj, value) {
   }
 };
 
-//Test cases to check the functionality of the code.
-const bestTVShowsByGenre = {
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
+module.exports = findKeyByValue;
 
-const babyFoods = {
-  milk: "Kendamil formula",
-  fruit: "Apple",
-  snack: "Goldfish Cheddar cracker"
-};
 
-//to test using assertEqual() if the return results has passed or failed.
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-assertEqual(findKeyByValue(babyFoods, "Kendamil formula"), "milk");
-assertEqual(findKeyByValue(babyFoods, "Apple"), "fruit");
-assertEqual(findKeyByValue(babyFoods, "Goldfish Cheddar cracker"), "snack");
-assertEqual(findKeyByValue(babyFoods, "cars"), undefined);
+/*Below test cases were used during the process of completing the code.
+*The test case is now through Mocha and Chai.
+*/
+
+// //Test cases to check the functionality of the code.
+// const bestTVShowsByGenre = {
+//   sci_fi: "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama:  "The Wire"
+// };
+
+// const babyFoods = {
+//   milk: "Kendamil formula",
+//   fruit: "Apple",
+//   snack: "Goldfish Cheddar cracker"
+// };
+
+// //to test using assertEqual() if the return results has passed or failed.
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+// assertEqual(findKeyByValue(babyFoods, "Kendamil formula"), "milk");
+// assertEqual(findKeyByValue(babyFoods, "Apple"), "fruit");
+// assertEqual(findKeyByValue(babyFoods, "Goldfish Cheddar cracker"), "snack");
+// assertEqual(findKeyByValue(babyFoods, "cars"), undefined);
 
 //ALTERNATIVE SOLUTION #1: Using for..in method
 /*
 const findKeyByValue = function(obj, value) {
   for (let objProperty in obj) {
     if (obj.hasOwnProperty(objProperty)) {
-      if (obj[objProperty] === value);
+      if (obj[objProperty] === value)
         return objProperty;
     }
   }

@@ -4,28 +4,8 @@ Implement takeUntil which will keep collecting items from a provided array until
 
 */
 
-const eqArrays = function(array1, array2) {
-
-  if (array1.length !== array2.length) {
-    return false;
-  }
-
-  for (const [idx, el] of array1.entries()) {
-    if (el !== array2[idx]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-// This function uses eqArrays to check if two arrays are equal and prints a message to the console.
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-};
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 const takeUntil = function(array, callback) {
 
@@ -41,6 +21,8 @@ const takeUntil = function(array, callback) {
   }
   return results;
 };
+
+module.exports = takeUntil;
 
 //Test case
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5]; // => [ 1, 2, 5, 7, 2 ]

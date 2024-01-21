@@ -4,13 +4,8 @@ Implement the function findKey which takes in an object and a callback. It shoul
 
 
 //This function will check two arrays and return true if both match otherwise false.
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+
+const assertEqual = require("./assertEqual");
 
 //This function takes in an object and a callback.
 const findKey = function(object1, callback) {
@@ -21,6 +16,7 @@ const findKey = function(object1, callback) {
 
   for (const key of object1Key) {
     let value = object1[key];
+    //If callback, the key of that parameter object1 will be assigned to results.
     if (callback(value)) {
       results = key;
       break;
@@ -29,6 +25,9 @@ const findKey = function(object1, callback) {
 
   return results;
 };
+
+module.exports = findKey;
+
 
 //Test cases
 console.log(findKey({
