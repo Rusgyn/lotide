@@ -1,14 +1,19 @@
 
 // FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
-  if (actual === expected && (typeof actual === typeof expected)) {
-    return "✅✅✅ Assertion Passed: " + actual + " === " + expected;
+  if (actual === expected) {
+    console.log("✅✅✅ Assertion Passed: " + actual + " === " + expected);
   } else {
-    return "🛑🛑🛑 Assertion Failed: " + actual + " !== " + expected;
+    console.log("🛑🛑🛑 Assertion Failed: " + actual + " !== " + expected);
   }
 };
 
 // TEST CODE
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1, 1));
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual("lighthouse labs", "bootcamp");
+assertEqual("lighthouse labs", "lighthouse labs");
+assertEqual("lighthouse labs", "Lighthouse Labs");
+assertEqual(1, 1);
+assertEqual(10, "10");
+assertEqual(2, -2);
 
