@@ -17,11 +17,8 @@ const tail = function(arr) {
     return newArray;
   }
 
-  for (let i = 1; i < arr.length; i++) {
-    newArray.push(arr[i]);
-  }
-
-  return newArray;
+  return arr.slice(1);
+  
 }
 
 // Test Case 1: Check the returned array elements
@@ -39,3 +36,8 @@ assertEqual(words.length, 3); // original array should still have 3 elements!
 const empty = [];
 tail(empty);
 assertEqual(empty.length, 0); // ensure we get back 0;
+
+// Test Case: Check an array with one element
+const single = ["only"];
+tail(single);
+assertEqual(single.length, 1); // ensure the original array still has 1 element
