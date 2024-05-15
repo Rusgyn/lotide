@@ -9,7 +9,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // FUNCTION IMPLEMENTATION: Function that retrieve the first element from the array, "head" of the array.
-const head = function(arr, element) {
+const head = function(arr) {
   if (!arr) {
     return undefined;
   } else {
