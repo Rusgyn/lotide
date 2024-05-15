@@ -11,12 +11,7 @@ const assertEqual = function(actual, expected) {
 // FUNCTION IMPLEMENTATION: Function that returns a new array with the tail of the given array.
 
 const tail = function(arr) {
-  let newArray = [];
-
-  if (arr === undefined || arr.length <= 1) {
-    return newArray;
-  }
-
+  
   return arr.slice(1);
   
 }
@@ -34,10 +29,10 @@ assertEqual(words.length, 3); // original array should still have 3 elements!
 
 // Test Case: Check an empty array
 const empty = [];
-tail(empty);
-assertEqual(empty.length, 0); // ensure we get back 0;
+const resultEmpty = tail(empty);
+assertEqual(resultEmpty.length, 0); // ensure we get back 0;
 
 // Test Case: Check an array with one element
 const single = ["only"];
-tail(single);
-assertEqual(single.length, 1); // ensure the original array still has 1 element
+const resultSingle = tail(single);
+assertEqual(resultSingle.length, 0); // ensure we get back 0;
