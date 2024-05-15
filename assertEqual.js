@@ -16,4 +16,6 @@ assertEqual("lighthouse labs", "Lighthouse Labs");
 assertEqual(1, 1);
 assertEqual(10, "10");
 assertEqual(2, -2);
+assertEqual(5.5, 5.50);
+assertEqual(1.1, 1.01);
 
