@@ -23,6 +23,11 @@ const eqArrays = function(arr1, arr2) {
 
 const assertArraysEqual = function(array1, array2) {
 
+  if (!Array.isArray(array1) && !Array.isArray(array2)) {
+    console.log("Please provide an array argument/s");
+    return;
+  }
+
   if (eqArrays(array1, array2)) {
     console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
   } else {
@@ -38,3 +43,5 @@ assertArraysEqual([1, 2, 3], [3, 2, 1]); //🛑🛑🛑 Assertion Failed: 1,2,3 
 assertArraysEqual([1, 2, 3], "[1, 2, 3]"); //🛑🛑🛑 Assertion Failed: 1,2,3 !== [1, 2, 3]
 assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); //✅✅✅ Assertion Passed: 1,2,3 === 1,2,3
 assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); //🛑🛑🛑 Assertion Failed: 1,2,3 !== 1,2,3
+assertArraysEqual([], []); //✅✅✅ Assertion Passed
+assertArraysEqual("", ""); //Please provide an array argument/s
