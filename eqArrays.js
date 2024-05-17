@@ -1,3 +1,7 @@
+/**
+ * Implement a function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
+ */
+
 // FUNCTION THAT TEST CASES
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
