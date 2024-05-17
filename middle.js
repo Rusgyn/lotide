@@ -38,14 +38,15 @@ const middle = function(arr) {
   let middle = arr.length / 2;
   let middleElement = [];
 
+  // Guard statement: returns empty array when the numbers of elements in an array are less or equal to two.
   if (arr.length <= 2) {
     return middleElement;
   }
 
   if (arr.length % 2 === 0) {
-    middleElement.push(arr[(middle - 1)], arr[middle]);
+    middleElement = [arr[(middle - 1)], arr[middle]];
   } else {
-    middleElement.push(arr[Math.trunc(middle)]);
+    middleElement = [arr[Math.trunc(middle)]];
   }
 
   return middleElement;
