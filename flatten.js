@@ -43,18 +43,18 @@ const flatten = function(arr) {
     return;
   }
 
-  for (let element in arr) {
-    if (Array.isArray(arr[element])) {
-      for (let el in arr[element]) {
-        flattenedArr.push(arr[element][el]);
+  for (let element of arr) {
+    if (Array.isArray(element)) {
+      for (let el of element) {
+        flattenedArr.push(el);
       }
     } else {
-    flattenedArr.push(arr[element]);
+      flattenedArr.push(element);
     }
   }
 
   return flattenedArr;
-}
+};
 
 //TEST CODE:
 console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
