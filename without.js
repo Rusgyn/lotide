@@ -33,6 +33,8 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 //FUNCTION IMPLEMENTATION: Function that will return a subset of a given array, removing unwanted elements.
+// The without function takes two arrays as arguments: 'source' and 'itemsToRemove'.
+// It returns a new array which is a copy of 'source', but with any elements that are present in 'itemsToRemove' removed.
 
 const without = function(source, itemsToRemove) {
 
