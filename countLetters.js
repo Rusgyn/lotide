@@ -16,6 +16,7 @@ const countLetters = function(string) {
 
   for (let char of string) {
 
+    // we can skip and not count spaces.
     if (char === ' ') {
       continue;
     }
