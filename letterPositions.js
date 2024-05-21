@@ -39,16 +39,16 @@ const letterPositions = function (sentence) {
   const results = {};
   // logic to update results here
   for (let index = 0; index < sentence.length; index++) {
-    
     // we can skip and not count spaces.
-    if (sentence[index] !== ' ') {
+    let character = sentence[index];
+    if (character !== ' ') {
       // set a property with that string key to:
       //    the value of string indexes, a multiple indexes maybe added to 
       //      the characters that was already there.
-      if(results[sentence[index]]) { //True, letter exist
-        results[sentence[index]].push(index);
+      if(results[character]) { //True, letter exist
+        results[character].push(index);
       } else { //Letter or char does not exist yet
-        results[sentence[index]] = [index];
+        results[character] = [index];
       }
     }
   }
@@ -60,13 +60,14 @@ const letterPositions = function (sentence) {
 console.log(letterPositions('lighthouse in the house'));
 
 //TEST CASE, using assertArrayEqual().
-assertArraysEqual(letterPositions("lighthouse in the house").l, [0]); //=> ✅✅✅ Assertion Passed: 0 === 0
-assertArraysEqual(letterPositions("lighthouse in the house").i, [1, 11]); //=> ✅✅✅ Assertion Passed: 1,11 === 1,11
-assertArraysEqual(letterPositions("lighthouse in the house").g, [2]); //=> ✅✅✅ Assertion Passed: 2 === 2
-assertArraysEqual(letterPositions("lighthouse in the house").h, [3, 5, 15, 18]); //=> ✅✅✅ Assertion Passed: 3,5,15,18 === 3,5,15,18
-assertArraysEqual(letterPositions("lighthouse in the house").t, [4, 14]); //=> ✅✅✅ Assertion Passed: 4,14 === 4,14
-assertArraysEqual(letterPositions("lighthouse in the house").o, [6, 19]); //=> ✅✅✅ Assertion Passed: 6,19 === 6,19
-assertArraysEqual(letterPositions("lighthouse in the house").u, [7, 20]); //=> ✅✅✅ Assertion Passed: 7,20 === 7,20
-assertArraysEqual(letterPositions("lighthouse in the house").s, [8, 21]); //=> ✅✅✅ Assertion Passed: 8,21 === 8,21
-assertArraysEqual(letterPositions("lighthouse in the house").e, [9, 16, 22]); //=> ✅✅✅ Assertion Passed: 9,16,22 === 9,16,22
-assertArraysEqual(letterPositions("lighthouse in the house").n, [12]); //=> ✅✅✅ Assertion Passed: 12 === 12
+let result = letterPositions("lighthouse in the house");
+assertArraysEqual(result.l, [0]); //=> ✅✅✅ Assertion Passed: 0 === 0
+assertArraysEqual(result.i, [1, 11]); //=> ✅✅✅ Assertion Passed: 1,11 === 1,11
+assertArraysEqual(result.g, [2]); //=> ✅✅✅ Assertion Passed: 2 === 2
+assertArraysEqual(result.h, [3, 5, 15, 18]); //=> ✅✅✅ Assertion Passed: 3,5,15,18 === 3,5,15,18
+assertArraysEqual(result.t, [4, 14]); //=> ✅✅✅ Assertion Passed: 4,14 === 4,14
+assertArraysEqual(result.o, [6, 19]); //=> ✅✅✅ Assertion Passed: 6,19 === 6,19
+assertArraysEqual(result.u, [7, 20]); //=> ✅✅✅ Assertion Passed: 7,20 === 7,20
+assertArraysEqual(result.s, [8, 21]); //=> ✅✅✅ Assertion Passed: 8,21 === 8,21
+assertArraysEqual(result.e, [9, 16, 22]); //=> ✅✅✅ Assertion Passed: 9,16,22 === 9,16,22
+assertArraysEqual(result.n, [12]); //=> ✅✅✅ Assertion Passed: 12 === 12
