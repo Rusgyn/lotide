@@ -23,3 +23,18 @@ const findKeyByValue = function(object, value) {
   return undefined;
 
 };
+
+// TEST CASE
+const bestTVShowsByGenre = {
+  sci_fi: "The Expanse",
+  comedy: "Brooklyn Nine-Nine",
+  drama: "The Wire",
+};
+
+console.log(findKeyByValue(bestTVShowsByGenre, "The Wire")); // => drama
+console.log(findKeyByValue(bestTVShowsByGenre, "That '70s Show")); // => undefined
+console.log(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine")); // => comedy
+
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama"); // => ✅✅✅ Assertion Passed: drama === drama
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);// ✅✅✅ Assertion Passed: undefined === undefined=> 
+assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");// => ✅✅✅ Assertion Passed: comedy === comedy
