@@ -5,5 +5,16 @@
 const letterPositions = function (sentence) {
   const results = {};
   // logic to update results here
+  for (let char in sentence) {
+    // we can skip and not count spaces.
+    if (sentence[char] === ' ') {
+      continue;
+    }
+
+    if(results[sentence[char]]) {
+      sentence[char].push(char);
+    } 
+  }
+
   return results;
 };
