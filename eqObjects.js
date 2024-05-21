@@ -14,7 +14,7 @@ const assertEqual = function(actual, expected) {
 const eqObjects = function(object1, object2) {
   let objectKey1 = Object.keys(object1); //returns an array with key elements
   let objectKey2 = Object.keys(object2); //returns an array with key elements
-  
+
   //Check if two given object has the same number of properties.
   if (objectKey1.length !== objectKey2.length) {
     return false;
@@ -41,3 +41,17 @@ assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 eqObjects(shirtObject, longSleeveShirtObject); // => false
 assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false);
+
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+eqObjects(multiColorShirtObject, anotherMultiColorShirtObject); // => true
+assertEqual(eqObjects(multiColorShirtObject, anotherMultiColorShirtObject), false);
+
+const longSleeveMultiColorShirtObject = {
+  size: "medium",
+  colors: ["red", "blue"],
+  sleeveLength: "long",
+};
+eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject); // => false
+assertEqual(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject), false);
+
