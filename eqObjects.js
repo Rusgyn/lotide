@@ -14,7 +14,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-// HELPER FUNCTIONS
+// HELPER FUNCTIONS. Compare "string" arguments.
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -36,7 +36,7 @@ const eqObjects = function(object1, object2) {
     return false;
   }
 
-  for (let key1 of objectKey1) { //key1 = [color, size];
+  for (let key1 of objectKey1) {
     //check if value matches, when the value is an array.
     if (Array.isArray(object1[key1]) && Array.isArray(object2[key1])) {
       if (!eqArrays(object1[key1], object2[key1])) {
