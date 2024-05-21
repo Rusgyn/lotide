@@ -1,4 +1,4 @@
-//HELPER FUNCTIONS:
+//HELPER FUNCTIONS: Functions that compare "string".
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -13,7 +13,8 @@ const assertEqual = function(actual, expected) {
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
-  for (const item of allItems) { 
+  for (const item of allItems) {
+ 
     // inside the loop,
     if (itemsToCount[item]) {
       // increment the counter for each item:
