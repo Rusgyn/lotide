@@ -1,5 +1,4 @@
-
-// HELPER FUNCTIONS
+// HELPER FUNCTIONS. Functions that compare "string".
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
