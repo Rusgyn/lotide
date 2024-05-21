@@ -5,16 +5,22 @@
 const letterPositions = function (sentence) {
   const results = {};
   // logic to update results here
-  for (let char in sentence) {
+  for (let index = 0; index < sentence.length; index++) {
+    
     // we can skip and not count spaces.
-    if (sentence[char] === ' ') {
-      continue;
+    if (sentence[index] !== ' ') {
+      // set a property with that string key to:
+      //    the value of string indexes, a multiple indexes maybe added to 
+      //      the characters that was already there.
+      if(results[sentence[index]]) { //True, letter exist
+        results[sentence[index]].push(index);
+      } else { //Letter or char does not exist yet
+        results[sentence[index]] = [index];
+      }
     }
-
-    if(results[sentence[char]]) {
-      sentence[char].push(char);
-    } 
   }
 
   return results;
 };
+
+console.log(letterPositions('lighthouse in the house'));
