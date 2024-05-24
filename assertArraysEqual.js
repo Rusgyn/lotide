@@ -24,7 +24,7 @@ const eqArrays = function(arr1, arr2) {
 const assertArraysEqual = function(array1, array2) {
 
   if (!Array.isArray(array1) && !Array.isArray(array2)) {
-    console.log("Please provide an array argument/s");
+    console.log("Both arguments must be array");
     return;
   }
 
