@@ -21,15 +21,14 @@ const assertEqual = function(actual, expected) {
 // FUNCTION IMPLEMENTATION: Function findKey.
 const findKey = function(object1, callback) {
   // Set the result to undefined as default
-  // if no key is found, return result as undefined.
+  // if no key is found, return result.
   let result = undefined;
 
   for (let objKey in object1) {
     // Passing the value of the object to callback, if truthy returns the key.
     if (callback(object1[objKey])) {
-      result = objKey;
-      // If callback is truthy the looping breaks/stop and return the key.
-      break;
+      // If callback is truthy, the function will exit as soon as it finds a match by returning the key which is the variable objKey.
+      return objKey;
     }
   }
 
