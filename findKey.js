@@ -10,16 +10,17 @@
 
 // FUNCTION IMPLEMENTATION: Function findKey.
 const findKey = function(object1, callback) {
-  
+  // Set the result to undefined as default
+  // if no key is found, return result as undefined.
   let result = undefined;
 
-  // Obtain the value property from the given object.
-  let objValue = Object.values(object1);
-  console.log("Value: ", objValue);
-  
   for (let objKey in object1) {
-    console.log("Key: ", objKey);
-    
+    // Passing the value of the object to callback, if truthy returns the key.
+    if (callback(object1[objKey])) {
+      result = objKey;
+      // If callback is truthy the looping breaks/stop and return the key.
+      break;
+    }
   }
 
   return result;
