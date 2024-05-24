@@ -8,7 +8,14 @@
 //Keep collecting items from a provided array until the callback provided returns a truthy value.
 
 const takeUntil = function(array, callback) {
+  
+  const results = [];
 
+  for (let element of array) {
+
+  }
+
+  return results;
 };
 
 // TEST CASE:
