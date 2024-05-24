@@ -13,15 +13,20 @@ const findKey = function(object1, callback) {
   
   let result = undefined;
 
-  for (let objKey of object1) {
-
+  // Obtain the value property from the given object.
+  let objValue = Object.values(object1);
+  console.log("Value: ", objValue);
+  
+  for (let objKey in object1) {
+    console.log("Key: ", objKey);
+    
   }
 
   return result;
 };
 
 // TEST CASE;
-findKey(
+console.log(findKey(
   {
     "Blue Hill": { stars: 1 },
     Akaleri: { stars: 3 },
@@ -31,6 +36,6 @@ findKey(
     Akelarre: { stars: 3 },
   },
   (x) => x.stars === 2
-); // => "noma"
+)); // => "noma"
 
 
