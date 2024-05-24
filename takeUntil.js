@@ -12,7 +12,13 @@ const takeUntil = function(array, callback) {
   const results = [];
 
   for (let element of array) {
-
+    // Applying the callback function, when it's truthy the iteration stop.
+    if (callback(element)) {
+      break;
+    } else {
+    // The element will be pushed to new array results until the callback is called and break the iteration of each element in the array.
+      results.push(element);
+    }
   }
 
   return results;
