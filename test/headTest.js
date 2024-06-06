@@ -1,5 +1,6 @@
 // Test Code for head()
 
+const assertEqual = require('../assertEqual');
 const head = require('../head');
 
 // TEST CODE
