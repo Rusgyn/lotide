@@ -1,24 +1,42 @@
 // Test Code for middle()
 
-const assertArraysEqual = require('../assertArraysEqual');
+const assertArraysEqual = require('../assertArraysEqual');// uses eqArrays to check if two arrays are equal
 const eqArrays = require('../eqArrays'); // assertArraysEqual() dependency
 const middle = require('../middle');
+const assert = require('chai').assert;
 
 //TEST CASE:
-const numbers = [20, 21, 30, 31, 40, 41];
-assertArraysEqual(middle(numbers), [30, 31]); // => ✅✅✅ Assertion Passed: 30,31 === 30,31
+describe("#middle", function() {
+  it("should return an empty array and passed when there's only single element in the given array", () => {
+    assert.deepEqual(middle([1]), []);
+  });
 
-const num = [15, 16, 17, 55, 53, 57, 8, 9, 10, 17, 101, 52, 12, 45, 25];
-assertArraysEqual(middle(num), [9]);// => ✅✅✅ Assertion Passed: 9 === 9
+  it("should return an empty array and passed when there's only two elements in the given array", () => {
+    assert.deepEqual(middle([1, 2]), []);
+  });
 
-const num1 = [1];
-assertArraysEqual(middle(num1), []);// => ✅✅✅ Assertion Passed:  === 
+  it("should return [2] and passed for [1, 2, 3]", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
 
-const num2 = [1, 2];
-assertArraysEqual(middle(num2), []);// => ✅✅✅ Assertion Passed:  === 
+  it("should return [3] and passed for [1, 2, 3, 4, 5]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
+  });
 
-const words = ["apple", "banana", "carrot", "durian", "eggplant", "fig"];
-assertArraysEqual(middle(words), [ 'carrot', 'durian' ]);// => ✅✅✅ Assertion Passed: carrot,durian === carrot,durian
+  it("should return [2, 3] and passed for [1, 2, 3, 4]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4]), [2, 3]);
+  });
 
-const word = ["apple", "banana", "carrot", "durian", "eggplant"];
-assertArraysEqual(middle(word), [ 'carrot']);// ✅✅✅ Assertion Passed: carrot === carrot
+  it("should return [3, 4] for [1, 2, 3, 4, 5, 6]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  });
+
+  it("should return ['d'] for ['a', 'b', 'c', 'd', 'e', 'f', 'g']", () => {
+    assert.deepEqual(middle(["a", "b", "c", "d", "e", "f", "g"]), ["d"]);
+  });
+
+  it("should return ['banana', 'carrot'] for ['apple', 'banana', 'carrot', 'durian']", () => {
+    assert.deepEqual(middle(["apple", "banana", "carrot", "durian"]), ["banana", "carrot"]);
+  });
+
+});
