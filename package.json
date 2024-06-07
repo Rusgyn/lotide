@@ -1,6 +1,6 @@
 {
   "name": "@titipo/lotide",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "lotide - a mini clone of the Lodash library",
   "main": "index.js",
   "directories": {
