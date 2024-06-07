@@ -9,16 +9,9 @@
  */
 
 // HELPER FUNCTION: Receive two parameters and compare
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
-
-// FUNCTION IMPLEMENTATION: Function findKey.
+// Function findKey.
 const findKey = function(object1, callback) {
   // Set the result to undefined as default
   // if no key is found, return result.
@@ -35,29 +28,4 @@ const findKey = function(object1, callback) {
   return result;
 };
 
-// TEST CASE;
-const test1 = {
-  "Blue Hill": { stars: 1 },
-  Akaleri: { stars: 3 },
-  noma: { stars: 2 },
-  elBulli: { stars: 3 },
-  Ora: { stars: 2 },
-  Akelarre: { stars: 3 },
-};
-const result1 = (findKey(test1, (x) => x.stars === 2)); // => Expected output: "noma"
-assertEqual(result1, "noma"); // => ✅✅✅ Assertion Passed: noma === noma
-
-const test2 = {
-  Piper: { species: 'dog', age: 2 },
-  Ginger: { species: 'cat', age: 3 },
-  Sophie: { species: 'cat', age: 2 },
-  Duke: { species: 'dog', age: 3 },
-  Bunny: { species: 'rabbit', age: 1 },
-  Loki: { species: 'hamster', age: 1 },
-  Diesel: { species: 'rabbit', age: 2}
-};
-let result2 = (findKey(test2, (animal) => animal.species === 'rabbit' && animal.age === 1)); // => Expected output: "Bunny"
-assertEqual(result2, "Bunny"); // => ✅✅✅ Assertion Passed: Bunny === Bunny
-result2 = (findKey(test2, (animal) => animal.species === 'dog' && animal.age === 3)); // => Expected output: "Duke"
-assertEqual(result2, "Duke"); // => ✅✅✅ Assertion Passed: Duke === Duke
-
+module.exports = findKey;
