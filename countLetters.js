@@ -28,22 +28,3 @@ const countLetters = function(string) {
 };
 
 module.exports = countLetters;
-
-//Test case will check the counts of all letters at once.
-const sentence = countLetters('Lighthouse in the house 2024');
-
-//Using Helper functions assertEqual
-assertEqual(sentence['L'], 1);
-assertEqual(sentence['i'], 2);
-assertEqual(sentence['g'], 1);
-assertEqual(sentence['h'], 4);
-assertEqual(sentence['t'], 2);
-assertEqual(sentence['o'], 2);
-assertEqual(sentence['u'], 2);
-assertEqual(sentence['s'], 2);
-assertEqual(sentence['e'], 3);
-assertEqual(sentence['i'], 2);
-assertEqual(sentence['n'], 1);
-assertEqual(sentence['2'], 2);
-assertEqual(sentence['0'], 1);
-assertEqual(sentence['4'], 1);

@@ -18,8 +18,3 @@ const assertObjectsEqual = function(actual, expected) {
 };
 
 module.exports = assertObjectsEqual;
-
-assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1' }); // => ✅✅✅ Assertion Passed: { a: '1', b: 2 } === { b: 2, a: '1' }
-assertObjectsEqual({ a: 10, b: 2 }, { b: 2, a: '1' }); // => 🛑🛑🛑 Assertion Failed: { a: 10, b: 2 } !== { b: 2, a: '1' }
-assertObjectsEqual({ a: 'one', b: 2 }, { b: 2, a: 'one' }); // => ✅✅✅ Assertion Passed: { a: 'one', b: 2 } === { b: 2, a: 'one' }
-assertObjectsEqual({ a: '1', b: '2' }, { b: 2, a: 1 }); // => 🛑🛑🛑 Assertion Failed: { a: '1', b: '2' } !== { b: 2, a: 1 }
