@@ -2,7 +2,7 @@
 
 const flatten = function(arr) {
 
-  let flattenedArr = [];
+  let flatArr = [];
 
   if (!Array.isArray(arr)) {
     console.log("Please provide an array argument");
@@ -11,15 +11,15 @@ const flatten = function(arr) {
 
   for (let element of arr) {
     if (Array.isArray(element)) {
-      for (let el of element) {
-        flattenedArr.push(el);
+      for (let i of element) {
+        flatArr.push(i);
       }
     } else {
-      flattenedArr.push(element);
+      flatArr.push(element);
     }
   }
 
-  return flattenedArr;
+  return flatArr;
 };
 
 module.exports = flatten;
