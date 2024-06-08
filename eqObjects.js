@@ -2,11 +2,8 @@
 
 const eqArrays = require('./eqArrays');
 
-/**
- * Function which will take in two objects and returns true or false, based on a perfect match.
- * Returns true if both objects have identical keys with identical values
- * Otherwise you get back a big fat false!
- */
+// Function which will take in two objects and returns true or false, based on a perfect match.
+
 const eqObjects = function(object1, object2) {
   let objectKey1 = Object.keys(object1); //returns an array with key elements
   let objectKey2 = Object.keys(object2); //returns an array with key elements
