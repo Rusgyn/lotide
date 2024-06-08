@@ -1,20 +1,10 @@
-/**Implement the function findKey which takes in an
- * INPUT:
- * function findKey
- * @param1 = object and a
- * @param2 = callback.
- * OUTPUT:
- * It should scan the object and return the first key for which the callback returns a truthy value.
- * If no key is found, then it should return undefined.
- */
+// Function findKey which takes in an object and a callback
+// It should scan the object and return the first key for which the callback returns a truthy value.
+// If no key is found, then it should return undefined.
 
-// HELPER FUNCTION: Receive two parameters and compare
-const assertEqual = require('./assertEqual');
-
-// Function findKey.
 const findKey = function(object1, callback) {
   // Set the result to undefined as default
-  // if no key is found, return result.
+  // if no key is found, return result (undefined).
   let result = undefined;
 
   for (let objKey in object1) {
