@@ -11,42 +11,54 @@ The Lotide project is a modular collection of functions that operate on data, na
 
 The following functions are currently implemented:
 
-- `assertArraysEqual(array1, array2)`: A function which will take in two arrays and console.log an appropriate message to the console.
-- `assertEqual(actual, expected)`: Will take two arguments and output if they match or not.
-- `assertObjectsEqual(actual, expected)`: will take in two objects and console.log an appropriate message to the console.
-- `countLetters(string)`: This function take in a sentence (as a string) and then return a count of each of the letters in that sentence.
-- `countOnly(allItems, itemsToCount)`: allItems: an array of strings that we need to look through. itemsToCount: an object specifying what to count
-- `eqArrays(array1, array2)`: A function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
-- `eqObjects(object1, object2)`: Will take in two objects and returns true or false, based on a perfect match.
-- `findKey(object1, callback)`: takes in an object and a callback.
-- `flatten(arrayToFlat)`: a function flatten which will take in an array containing elements including nested arrays of elements, and return a "flattened" version of the array.
-- `head(name)`: A function that will take the first element of an array.
-- `letterPosition(sentence)`: function will return all the indices (zero-based positions) in the string where each character is found.
-- `middle(whatIsMidArray)`: A function which will take in an array and return the middle-most element(s) of the given array.
-- `tail(array)`: A function tail which returns the "tail" of an array: everything except for the first item (head) of the provided array.
-- `takeUntil(array, callback)`: A function which will keep collecting items from a provided array until the callback provided returns a truthy value.
-- `without(source, itemsToRemove)`: This function will return a new array with only those elements from source that are not present in the itemsToRemove array.
+- [`assertArraysEqual(array1, array2)`](https://github.com/Rusgyn/lotide/blob/main/assertArraysEqual.js): A function which will take in two arrays and console.log an appropriate message to the console.
+- [`assertEqual(actual, expected)`](https://github.com/Rusgyn/lotide/blob/main/assertEqual.js): Will take two arguments and output if they match or not.
+- [`assertObjectsEqual(actual, expected)`](https://github.com/Rusgyn/lotide/blob/main/assertObjectsEqual.js): will take in two objects and console.log an appropriate message to the console.
+- [`countLetters(string)`](https://github.com/Rusgyn/lotide/blob/main/countLetters.js): This function take in a sentence (as a string) and then return a count of each of the letters in that sentence.
+- [`countOnly(allItems, itemsToCount)`](https://github.com/Rusgyn/lotide/blob/main/countOnly.js): allItems: an array of strings that we need to look through. itemsToCount: an object specifying what to count
+- [`eqArrays(array1, array2)`](https://github.com/Rusgyn/lotide/blob/main/eqArrays.js): A function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
+- [`eqObjects(object1, object2)`](https://github.com/Rusgyn/lotide/blob/main/eqObjects.js): Will take in two objects and returns true or false, based on a perfect match.
+- [`findKey(object1, callback)`](https://github.com/Rusgyn/lotide/blob/main/findKey.js): takes in an object and a callback.
+-[`findKeyByValue(object, value)`](https://github.com/Rusgyn/lotide/blob/main/findKeyByValue.js): Scan the object returns the first key which contains the given value.
+- [`flatten(arrayToFlat)`](https://github.com/Rusgyn/lotide/blob/main/flatten.js): a function flatten which will take in an array containing elements including nested arrays of elements, and return a "flattened" version of the array.
+- [`head(name)`](https://github.com/Rusgyn/lotide/blob/main/head.js): A function that will take the first element of an array.
+- [`letterPosition(sentence)`](https://github.com/Rusgyn/lotide/blob/main/letterPositions.js): function will return all the indices (zero-based positions) in the string where each character is found.
+- [`map(array, callback)`](https://github.com/Rusgyn/lotide/blob/main/map.js): function will return a new array based on the results of the callback function.
+- [`middle(whatIsMidArray)`](https://github.com/Rusgyn/lotide/blob/main/middle.js): A function which will take in an array and return the middle-most element(s) of the given array.
+- [`tail(array)`](https://github.com/Rusgyn/lotide/blob/main/tail.js): A function tail which returns the "tail" of an array: everything except for the first item (head) of the provided array.
+- [`takeUntil(array, callback)`](https://github.com/Rusgyn/lotide/blob/main/takeUntil.js): A function which will keep collecting items from a provided array until the callback provided returns a truthy value.
+- [`without(source, itemsToRemove)`](https://github.com/Rusgyn/lotide/blob/main/without.js): This function will return a new array with only those elements from source that are not present in the itemsToRemove array.
 
 ## Getting Started
 
 ### Dependencies:
 - node
+- npm
 - chai
 - mocha
 
 ### Installation:
-- open your terminal and run
-`npm init`
-`npm install mocha@9.2.2 chai@4.3.7 --save-dev`
+- open your command line and run
+
+    `npm init`
+
+    `npm install mocha@9.2.2 chai@4.3.7 --save-dev`
+
+    Note: you may install the current versions.
+
 - open `package.json` and modify the value of test to "mocha"
 
-  from:  "scripts": {
-              "test": "./node_modules/mocha/bin/mocha"
-          },
- 
-  to:   "scripts": {
-            "test": "mocha"
-        },
+  <i>from:</i>
+
+        "scripts": {
+                "test": "./node_modules/mocha/bin/mocha"
+            },
+    
+  <i>to:</i>
+
+        "scripts": {
+                "test": "mocha"
+            },
 
 ### Executing the Program:
 There are multiple mini clone Lodash library. To execute the function
@@ -72,14 +84,14 @@ There are multiple mini clone Lodash library. To execute the function
     ```
 6. Unit testing.
 
-    i. On the command line, navigate to the subfolder <b>test</b>.
+    i.  On the command line, navigate to the subfolder <b>test</b>.
     ```
     // If your current folder is lotide.
     // confirm by running the command pwd
 
     cd test
     ```
-    ii. run the command
+    ii.  run the command
     ```
     npm test
     ```
