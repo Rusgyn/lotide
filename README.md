@@ -19,7 +19,7 @@ The following functions are currently implemented:
 - [`eqArrays(array1, array2)`](https://github.com/Rusgyn/lotide/blob/main/eqArrays.js): A function eqArrays which takes in two arrays and returns true or false, based on a perfect match.
 - [`eqObjects(object1, object2)`](https://github.com/Rusgyn/lotide/blob/main/eqObjects.js): Will take in two objects and returns true or false, based on a perfect match.
 - [`findKey(object1, callback)`](https://github.com/Rusgyn/lotide/blob/main/findKey.js): takes in an object and a callback.
--[`findKeyByValue(object, value)`](https://github.com/Rusgyn/lotide/blob/main/findKeyByValue.js): Scan the object returns the first key which contains the given value.
+- [`findKeyByValue(object, value)`](https://github.com/Rusgyn/lotide/blob/main/findKeyByValue.js): Scan the object returns the first key which contains the given value.
 - [`flatten(arrayToFlat)`](https://github.com/Rusgyn/lotide/blob/main/flatten.js): a function flatten which will take in an array containing elements including nested arrays of elements, and return a "flattened" version of the array.
 - [`head(name)`](https://github.com/Rusgyn/lotide/blob/main/head.js): A function that will take the first element of an array.
 - [`letterPosition(sentence)`](https://github.com/Rusgyn/lotide/blob/main/letterPositions.js): function will return all the indices (zero-based positions) in the string where each character is found.
