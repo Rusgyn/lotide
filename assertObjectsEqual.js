@@ -1,6 +1,3 @@
-// Function that takes in two arrays and returns true or false, based on a perfect match.
-const eqArrays = require('./eqArrays');
-
 //Compare two objects, return true if it matches else false.
 const eqObjects = require('./eqObjects');
 
